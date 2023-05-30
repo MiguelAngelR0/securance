@@ -1,1 +1,86 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+@include mat.core();
+@import 'assets/icons/style.scss';
+@import 'assets/typestyle.scss';
+
+$secure-primary-map: (
+  50 : #fbe3e9,
+  100 :#f6b8c8,
+  200 :#f08aa5,
+  300 :#e95c81,
+  400 :#e33968,
+  500 :#dd164f,
+  600 :#cd124d,
+  700 :#b80d4a,
+  800 :#a40746,
+  900 :#4B98D9,
+  contrast: (50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+  )
+);
+
+
+
+$my-primary: mat.define-palette($secure-primary-map, 900);
+$my-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+$my-typography: mat.define-typography-config($font-family: 'roboto',
+    $headline-1: $custom-header-1,
+    $headline-2: $header-2,
+    $headline-5: $header-3,
+    $button: $body,
+    $overline: $small-title);
+
+$my-theme: mat.define-light-theme((color: (primary: $my-primary,
+        accent: $my-accent,
+      ),
+      typography: $my-typography,
+    ));
+
+@include mat.all-component-themes($my-theme);
+
+.kids-theme {
+
+  @mixin custom-heading{
+  h1 , .h1{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 75px;
+  }
+}
+  
+  
+  
+
+  $kids-primary: mat.define-palette(mat.$cyan-palette);
+  $kids-accent: mat.define-palette(mat.$yellow-palette);
+
+  // Typography config based on the default, but using "Comic Sans" as the
+  // default font family for all levels.
+  $kids-typography: mat.define-typography-config($font-family: 'Comic Sans',
+    $headline-1: $custom-header-1,
+    $headline-2: null,
+    $button: null,
+    $overline: null,
+  );
+
+  $kids-theme: mat.define-light-theme((color: (primary: $kids-primary,
+        accent: $kids-accent,
+      ),
+      typography: $kids-typography,
+    ));
+
+  @include mat.all-component-themes($kids-theme);
+}
+
