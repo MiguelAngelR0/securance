@@ -1,0 +1,86 @@
+@import 'src/assets/typestyle.scss';
+@import 'src/assets/color.scss';
+
+.example-form-field {
+  width: 100%;
+  background-color: #fff;
+}
+
+
+.inputSearch {
+  border-radius: 8px;
+  background-color: #CFE1F1;
+  @include body;
+  color: $secura-primary;
+}
+
+.icon-lupa{
+  cursor: pointer;
+}
+
+
+.caja {
+  border: none;
+  /* Quita el borde predeterminado */
+  outline: none;
+  /* Quita el resaltado del foco */
+  width: 100%;
+  background-color: #CFE1F1;
+
+}
+
+.caja:focus {
+  border: none;
+  /* Quita el borde al pulsar el campo de entrada */
+  outline: none;
+  /* Quita el resaltado del foco al pulsar el campo de entrada */
+  background-color: #CFE1F1;
+}
+
+.caja::placeholder {
+  color: $secura-primary;
+  /* Cambia el color del marcador de posición según tus preferencias */
+}
+
+//* Inputs date 
+
+.inputDate {
+
+
+  position: relative;
+}
+
+
+.inputDateInside {
+  display: block;
+  position: relative;
+  border: 1px solid $secura-primary;
+  border-radius: 8px;
+
+  outline: none;
+  /* Quita el resaltado del foco */
+  width: 100%;
+}
+
+.lbl-nombre {
+  position: absolute;
+  top: -12px;
+  left: 15px;
+  background-color: #fff;
+  color: $secura-primary;
+  padding: 0;
+  font-size: small;
+
+}
+
+.limpiarFiltro{
+  background-color: $secura-primary;
+  border-radius: 0.5em;
+  border: 1px solid $secura-primary;
+}
+
+.buttonC{
+  position: absolute;
+  right: 20px;
+  top: 1px;
+}

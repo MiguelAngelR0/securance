@@ -1,0 +1,46 @@
+@import '../../../assets/typestyle.scss';
+@import '../../../assets/color.scss';
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+  }
+  .bottom{
+    background-color:$grey-25 ;
+  
+  }
+
+  .contact{
+    background-color:$secura-primary;
+    color: black;
+  }
+
+  .custom{
+    
+    background-color: $grey-light;
+ 
+}
+.header-3{
+  @each $property, $value in $header-3 {
+    #{$property}: $value;
+  }
+}
+.body{
+  @each $property, $value in $body {
+    #{$property}: $value;
+  }
+}
+
+.body-bold{
+  @each $property, $value in $body-bold {
+    #{$property}: $value;
+  }
+}
+
+
+.get{
+  color: $secura-primary;
+}

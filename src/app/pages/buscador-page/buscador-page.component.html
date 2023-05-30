@@ -1,0 +1,6 @@
+<app-header></app-header>
+<!-- recibo el evento -->
+<app-buscador-polizas (arrayEnviado)="recibirArray($event)"></app-buscador-polizas>
+<!-- envio el array a este componente -->
+<app-listado-buscador-polizas [arrayRecibido]="array"></app-listado-buscador-polizas>
+<app-footer></app-footer>

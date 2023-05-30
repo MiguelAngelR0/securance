@@ -1,0 +1,83 @@
+<div class="container">
+
+  <div class="row mt-5">
+    <div class="col-4">
+      <div class="row d-flex" >
+        <form [formGroup]="myForm">
+        <div class="inputSearch d-flex justify-content-around align-items-center p-3">
+          <input type="text" formControlName="busqueda" class="caja" placeholder="Busca por No. de póliza o nombre" [matChipInputFor]="chipGrid"
+            (matChipInputTokenEnd)="add($event)">
+          <span class="icon-lupa" (click)="enviarArray()"></span> 
+        </div>
+      </form>
+
+      </div>
+
+    </div>
+
+  
+    <div class="col-4">
+      <form [formGroup]="myForm">
+      <div class="inputDate d-flex justify-content-between align-items-center">
+
+        <input type="date" class="inputDateInside p-3" placeholder="DD/MM/AAAA" formControlName="startDate"  id="inputD" [matDatepicker]="datepicker" [value]="selectedDate" (dateChange)="selectedDate = $event.value" >
+        <label class="lbl-nombre" for="inputD">Fecha de inicio</label>
+
+        
+        <mat-datepicker-toggle matIconSuffix [for]="datepicker" class="buttonC">
+          <mat-icon matDatepickerToggleIcon><span class="icon-calendar"></span></mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #datepicker>
+          <mat-datepicker-actions>
+            <button mat-button matDatepickerCancel>Cancel</button>
+            <button mat-raised-button color="primary" matDatepickerApply (click)="addDate(selectedDate)" >Apply</button>
+          </mat-datepicker-actions>
+        </mat-datepicker>
+
+      </div>
+    </form>
+    </div>
+    <div class="col-4">
+      <form [formGroup]="myForm">
+      <div class="inputDate d-flex justify-content-between align-items-center">
+    
+        <input type="date" class="inputDateInside p-3" placeholder="DD/MM/AAAA" formControlName="endDate" id="inputD2" [matDatepicker]="datepicker2" [value]="selectedEndDate" (dateChange)="selectedEndDate = $event.value">
+        <label class="lbl-nombre" for="inputD2">Fecha de fin</label>
+    
+        <mat-datepicker-toggle matIconSuffix [for]="datepicker2" class="buttonC">
+          <mat-icon matDatepickerToggleIcon><span class="icon-calendar"></span></mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #datepicker2>
+          <mat-datepicker-actions>
+            <button mat-button matDatepickerCancel>Cancel</button>
+            <button mat-raised-button color="primary" matDatepickerApply (click)="addEndDate(selectedEndDate)">Apply</button>
+          </mat-datepicker-actions>
+        </mat-datepicker>
+        
+      </div>
+    </form>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col4">
+      <mat-chip-grid #chipGrid aria-label="Enter keywords" [formControl]="formControl">
+        <mat-chip-row *ngFor="let keyword of keywords" (removed)="removeKeyword(keyword)">
+          {{keyword}}
+          <button matChipRemove aria-label="'remove ' + keyword">
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip-row>
+      </mat-chip-grid>
+      <ng-container *ngIf="keywords.length > 0">
+        <button class="limpiarFiltro" (click)="limpiarFiltro()">Limpiar Filtro</button>
+      </ng-container>
+        {{formControl.value}}
+      
+    </div>
+  
+
+  </div>
+
+
+</div>

@@ -1,0 +1,144 @@
+<div class="container mt-5">
+
+  <div class="row">
+    <div class="col d-flex align-items-end justify-content-end">
+      <div class="d-flex align-items-center justify-content-center edit-wrap">
+        <p class="editBoton">Editar póliza</p>
+        <button (click)="editar()" mat-icon-button>
+          <span class="icon-edit"></span>
+        </button>
+        
+
+      </div>
+    </div>
+  </div>
+  <div class="row box">
+    <div class="d-flex flex-column">
+      <div class="col-12">
+        <h1 class="">Harley Davidson Fatbob 114 2023</h1>
+        <div class="row">
+          <div class="col-6">
+            <p><b>No. de poliza:</b> 735777</p>
+            <p><b>Producto contratado:</b> 735777</p>
+            <!-- todo hacer que cambien al dar click para editar  -->
+
+            <p><b>Nombre del tomador: </b> 
+
+              <ng-container *ngIf="edit; else primaData">
+              <input type="text" class="inputEdit" />
+            </ng-container>
+
+            <ng-template #primaData> 735777</ng-template>
+
+          </p>
+            <p><b>Valor de la prima:</b>
+              <ng-container *ngIf="edit; else primaData">
+                <input type="text" class="inputEdit"/>
+              </ng-container>
+              <ng-template #primaData> 735777</ng-template>
+            </p>
+
+          </div>
+  
+          <div class="col-6">
+            <p><b>Fecha de poliza:</b> 735777</p>
+            <p><b>Proxima renovación:</b> 735777</p>
+          </div>
+
+        </div>
+      </div>
+
+      
+       
+      
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col">
+      <h2>Cobertura de la poliza</h2>
+      <h3><b>Tipo de seguro:</b>Franquicia Premium</h3>
+
+      <table class="table table-striped mt-5 tabla" [formGroup]="toppings">
+        <thead>
+          <tr>
+            <!-- todo hacer que se agregue solo cuando se habilite la edicion -->
+            <th scope="col" *ngIf="edit">Incluir</th>
+            <th scope="col">Daño / reparación</th>
+            <th scope="col">Cobertura</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"  *ngIf="edit"><label class="containerC">
+              <input type="checkbox"  formControlName="lunas">
+              <span class="checkmark"></span>
+            </label></th>
+
+            <td>Lunas</td>
+            <td>incluido</td>
+           
+          </tr>
+          <tr>
+            <th scope="row"  *ngIf="edit"><label class="containerC">
+              <input type="checkbox"  formControlName="pintura">
+              <span class="checkmark"></span>
+            </label></th>
+            <td>Pintura</td>
+            <td>Hasta 50%</td>
+            
+          </tr>
+          <tr>
+            <th scope="row"  *ngIf="edit">
+            <label class="containerC">
+              <input type="checkbox"  formControlName="accidente">
+              <span class="checkmark"></span>
+            </label>
+            
+            </th>
+            <td>Accidentes en carretera</td>
+            <td>incluido</td>
+          </tr>
+          <tr>
+            <th scope="row"  *ngIf="edit">
+              <label class="containerC">
+                <input type="checkbox"  formControlName="asistencia">
+                <span class="checkmark"></span>
+              </label>
+            </th>
+            <td>Asistencia Medica</td>
+            <td>1.804,00$</td>
+          </tr>
+          
+        </tbody>
+      </table>
+      
+    </div>
+   
+
+  </div>
+
+  
+  
+
+  <div class="row">
+    <div class="col">
+      <section class="example-section" [formGroup]="toppings">
+        <h4>You chose:</h4>
+        {{toppings.value | json}}
+      </section>
+    </div>
+ 
+    <div class="col d-flex align-items-end justify-content-end">
+      <ng-container  *ngIf="edit">
+        <button (click)="editar()" class="botonCancelar m-1 p-2">Cancelar</button> 
+        <button class="botonGuardar m-1 p-2">Guardar</button>
+      </ng-container>
+    </div>
+    
+    
+  </div>
+
+
+</div>

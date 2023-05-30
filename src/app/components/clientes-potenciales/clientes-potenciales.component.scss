@@ -1,0 +1,36 @@
+@import '../../../assets/typestyle.scss';
+@import '../../../assets/color.scss';
+
+
+
+
+.body {
+  @each $property, $value in $body {
+    #{$property}: $value;
+  }
+}
+
+.subtitle{
+  @each $property, $value in $subtitle {
+    #{$property}: $value;
+  }
+}
+
+.secura-primary{
+  color:$secura-primary;
+}
+
+
+.example-card {
+    max-width: 600px;
+    width: 45vw;
+    min-width: 539px;
+  
+
+background: $grey-light;
+
+
+border: 1px solid #6FA6D4;
+border-radius: 5px;
+  }
+
