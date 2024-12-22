@@ -1,0 +1,137 @@
+$custom-header-1: (
+  font-family: 'Roboto',
+  font-style: normal,
+  font-weight: 700,
+  font-size: 64px,
+  line-height: 75px
+);
+
+$header-2: (
+  font-family: 'Roboto',
+  font-style: normal,
+  font-weight: 700,
+  font-size: 40px,
+  line-height: 47px
+);
+
+$header-3: (
+  font-family: 'Roboto',
+  font-style: normal,
+  font-weight: 600,
+  font-size: 24px,
+  line-height: 28px
+);
+
+$subtitle: (
+  font-family: 'Roboto',
+  font-style: normal,
+  font-weight: 400,
+  font-size: 24px,
+  line-height: 28px
+);
+
+$body: (
+  font-family: 'Roboto',
+  font-style: normal,
+  font-weight: 400,
+  font-size: 16px,
+  line-height: 19px
+);
+$body-bold: (
+  font-family: 'Roboto',
+  font-style: normal,
+  font-weight: 700,
+  font-size: 16px,
+  line-height: 19px
+);
+
+$small: (
+  font-family: 'Roboto',
+  font-style: normal,
+  font-weight: 500,
+  font-size: 10px,
+  line-height: 12px
+);
+
+$small-title: (
+  font-family: 'Roboto',
+  font-style: normal,
+  font-weight: 700,
+  font-size: 10px,
+  line-height: 12px
+);
+
+
+//mixin
+// Mixin para $custom-header-1
+@mixin header-1 {
+  font-family: map-get($custom-header-1, font-family);
+  font-style: map-get($custom-header-1, font-style);
+  font-weight: map-get($custom-header-1, font-weight);
+  font-size: map-get($custom-header-1, font-size);
+  line-height: map-get($custom-header-1, line-height);
+}
+
+// Mixin para $header-2
+@mixin header-2 {
+  font-family: map-get($header-2, font-family);
+  font-style: map-get($header-2, font-style);
+  font-weight: map-get($header-2, font-weight);
+  font-size: map-get($header-2, font-size);
+  line-height: map-get($header-2, line-height);
+}
+
+// Mixin para $header-3
+@mixin header-3 {
+  font-family: map-get($header-3, font-family);
+  font-style: map-get($header-3, font-style);
+  font-weight: map-get($header-3, font-weight);
+  font-size: map-get($header-3, font-size);
+  line-height: map-get($header-3, line-height);
+}
+
+// Mixin para $subtitle
+@mixin subtitle {
+  font-family: map-get($subtitle, font-family);
+  font-style: map-get($subtitle, font-style);
+  font-weight: map-get($subtitle, font-weight);
+  font-size: map-get($subtitle, font-size);
+  line-height: map-get($subtitle, line-height);
+}
+
+// Mixin para $body
+@mixin body {
+  font-family: map-get($body, font-family);
+  font-style: map-get($body, font-style);
+  font-weight: map-get($body, font-weight);
+  font-size: map-get($body, font-size);
+  line-height: map-get($body, line-height);
+}
+
+// Mixin para $body-bold
+@mixin body-bold {
+  font-family: map-get($body-bold, font-family);
+  font-style: map-get($body-bold, font-style);
+  font-weight: map-get($body-bold, font-weight);
+  font-size: map-get($body-bold, font-size);
+  line-height: map-get($body-bold, line-height);
+}
+
+// Mixin para $small
+@mixin small {
+  font-family: map-get($small, font-family);
+  font-style: map-get($small, font-style);
+  font-weight: map-get($small, font-weight);
+  font-size: map-get($small, font-size);
+  line-height: map-get($small, line-height);
+}
+
+// Mixin para $small-title
+@mixin small-title {
+  font-family: map-get($small-title, font-family);
+  font-style: map-get($small-title, font-style);
+  font-weight: map-get($small-title, font-weight);
+  font-size: map-get($small-title, font-size);
+  line-height: map-get($small-title, line-height);
+}
+
